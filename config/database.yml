@@ -81,6 +81,6 @@ test:
 production:
   <<: *default
   database: respect_production
-  username: aws
-  password: aws
+  username: respect
+  password: 
   host: localhost
