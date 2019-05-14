@@ -13,6 +13,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head],
       credentials: true,
-      expose: ['Authorization', 'Access-Controll-Allow-Origin']
+      expose: ['Authorization', 'Access-Control-Allow-Origin']
   end
 end
