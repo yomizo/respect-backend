@@ -82,4 +82,4 @@ production:
   <<: *default
   database: respect_production
   username: respect
-  password: <%= ENV['RESPECT_DATABASE_PASSWORD'] %>
+  password: 
