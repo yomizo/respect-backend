@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from Pundit::NotAuthorizedError, with: :no_authorization
 
-
   # correct token? or have token?
   def authenticate # ninsho
     if request.headers[:HTTP_AUTHORIZATION] != nil
