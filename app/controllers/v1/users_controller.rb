@@ -3,7 +3,6 @@ module V1
     before_action :set_user, only: [:show, :update, :destroy] # need to authorization
     before_action :authenticate, except: [:create] # need to authenticate
     
-
     def index
       users = User.all
       render json: users, adapter: :json

@@ -11,7 +11,6 @@ module V1
         post = post.attributes
         post.merge(image:image_link, user_name: user.name)
       end
-
       render json: posts, adapter: :json
     end
 

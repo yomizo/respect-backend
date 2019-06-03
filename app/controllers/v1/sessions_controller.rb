@@ -13,8 +13,7 @@ module V1
           }, adapter: :json
       else
         render json: {error: "Unauthorized"}, status: 422
-      end
-      
+      end    
     end
 
     private
