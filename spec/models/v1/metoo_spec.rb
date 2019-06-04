@@ -8,7 +8,6 @@ RSpec.describe Metoo, type: :model do
     @metoo = Metoo.new(user_id: @user.id, post_id: @post.id)
   end
 
-  #
   describe "validation" do
     # 正常系
     context "valid" do
@@ -17,8 +16,6 @@ RSpec.describe Metoo, type: :model do
         expect(@metoo).to be_valid
       end
     end
-
-
     # 異常系
     context "invalid" do
       # user_id が無ければ無効
@@ -26,7 +23,6 @@ RSpec.describe Metoo, type: :model do
         @metoo.user_id = nil
         expect(@metoo).to_not be_valid
       end
-
       # post_id が無ければ無効
       it "is invalid without post_id" do
         @metoo.post_id = nil

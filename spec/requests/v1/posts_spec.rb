@@ -6,14 +6,12 @@ RSpec.describe "Posts", type: :request do
     @post_params = FactoryBot.attributes_for(:post)
   end
 
-  #
   describe "GET /posts" do
     # header なし index リクエストOK(200)
     it "GET posts index works! without header" do
       get "/posts"
       expect(response).to have_http_status(200)
     end
-
     # header なし show リクエストOK(200)
     it "GET posts show works! without header" do
       get "/posts/#{@post.id}"
@@ -21,14 +19,12 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
-  #
   describe "POST /post" do
     # header なしの create  リクエスト(400)
     it "POST post create unworks! without header" do
       post "/posts", params: {post: @post_params}
       expect(response).to have_http_status(400)
     end
-
     # create  リクエスト(201)
     it "POST post create works! with header" do
       post "/posts",
@@ -36,7 +32,6 @@ RSpec.describe "Posts", type: :request do
         params: {post: @post_params}
       expect(response).to have_http_status(201)
     end
-
     # header に　ニセトークン(401)
     it "POST post create unworks! with wrong header" do
       post "/posts",
@@ -46,7 +41,6 @@ RSpec.describe "Posts", type: :request do
     end     
   end
 
-  # 
   describe "DELETE /post" do
     # 自分の投稿 delete(204)
     it "DELETE post works!" do
@@ -61,7 +55,6 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
-  #
   describe "PATCH /post" do
     # 自分の投稿 update OK(200)
     it "PATCH post works!" do
